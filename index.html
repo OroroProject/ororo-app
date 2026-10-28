@@ -1,0 +1,385 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#052e23"><title>ORORO · Are You the Lucky One?</title><style>
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#176348,#04271e 75%);color:#fff5d8;font-family:-apple-system,BlinkMacSystemFont,Arial,sans-serif}button,input,select{font:inherit}button{cursor:pointer;min-height:44px}.app{max-width:540px;margin:auto;padding:18px 16px 110px}.head{display:flex;align-items:center;justify-content:space-between;gap:8px}.logo{width:52px;height:52px;object-fit:cover;border-radius:50%;background:#fff}.brand{display:flex;align-items:center;gap:8px;color:#ffdc78;font-weight:900;font-size:26px;letter-spacing:1px}.tag{color:#e9d49a;margin:7px 0 20px}.badge{border:1px solid #9b8244;border-radius:20px;padding:7px;font-size:10px;color:#ffdf83}.card{background:linear-gradient(140deg,#10523a,#073126);border:1px solid #43775c;border-radius:20px;padding:16px;margin:12px 0}.gold{background:linear-gradient(110deg,#ffe99c,#d59a30);color:#153c2a!important;border:0!important}.balance{font-size:30px;font-weight:900;margin:8px 0}.row{display:flex;align-items:center;justify-content:space-between;gap:10px}.small{font-size:13px;color:#c7dacb}.price{font-weight:900;color:#ffe18b}.btn{background:#1a6145;border:1px solid #6b9c7e;color:#fff;border-radius:13px;padding:10px 14px;font-weight:700}.btn:disabled{opacity:.45}.wide{width:100%}.section{font-size:21px;font-weight:850;margin:23px 0 10px}.house{display:flex;align-items:center;gap:12px}.icon{display:grid;place-items:center;width:54px;height:54px;background:#1b684a;border-radius:15px;font-size:26px;flex-shrink:0}.grow{flex:1;min-width:0}.nav{position:fixed;bottom:0;left:0;right:0;max-width:540px;margin:auto;background:#052e22;border-top:1px solid #4c8060;display:flex;justify-content:space-around;padding:9px 0 max(12px,env(safe-area-inset-bottom));z-index:2}.nav button{background:none;border:0;color:#d7e5d8;font-size:12px}.nav button.on{color:#ffe18b;font-weight:900}.notice{background:#164d38;border-left:3px solid #f0cc6d;padding:11px;border-radius:9px;font-size:13px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.count{font-size:26px;font-weight:900;color:#ffdc7a}.progress{height:9px;background:#073024;border-radius:10px;overflow:hidden;margin:9px 0}.progress>span{display:block;height:100%;background:#eac45c}.chips{display:flex;flex-wrap:wrap;gap:6px;margin:9px 0}.chip{border:1px solid #62957a;border-radius:15px;padding:6px 10px;background:#174b37;font-size:12px}.field{width:100%;border:1px solid #719b7b;border-radius:12px;padding:12px;margin:6px 0 12px;background:#082e22;color:white;font-size:16px}label{font-size:13px;color:#f7dc96}h2{margin:14px 0}.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:#f3d47a;color:#143c2a;padding:12px;border-radius:12px;display:none;z-index:3;max-width:90%;font-weight:750}.muted{color:#bdd5c5}.reveal{position:fixed;inset:0;z-index:10;background:radial-gradient(circle at center,#155a3c,#031b16 75%);display:flex;align-items:center;justify-content:center;padding:18px;text-align:center}.reveal[hidden]{display:none}.revealbox{position:relative;width:min(100%,420px);border:1px solid #bd974a;border-radius:25px;padding:22px 18px 28px;background:#073427;overflow:hidden}.reveal-logo{width:110px;height:110px;border-radius:50%;object-fit:cover;border:4px solid #e8c05b;box-shadow:0 0 28px #c9a24a88}.reveal-logo.spin{animation:luckspin 1.1s ease-in-out infinite}.reveal h2{font-size:30px;color:#ffde83}.prize{font-size:38px;color:#ffde83;font-weight:900;line-height:1.2;overflow-wrap:anywhere}.spark{position:absolute;top:-15px;font-size:20px;pointer-events:none;animation:fall 3.3s linear infinite}15%{opacity:1}85%{opacity:1}100%{translate:12px 470px;opacity:0}}.reveal-actions{display:flex;gap:9px;margin-top:18px}.reveal-actions button{flex:1}.reveal-detail{color:#e2e7d5;font-size:14px;line-height:1.7}@keyframes luckspin{to{transform:rotate(360deg)}}@keyframes fall{to{transform:translateY(440px) rotate(480deg);opacity:0}}@media(prefers-reduced-motion:reduce){.reveal-logo.spin,.spark{animation:none}}
+.live-activity{margin-top:13px;border-top:1px solid #4c8060;padding-top:11px}.live-activity-item{border-radius:9px;margin:8px 0;background:#14543d;padding:8px 10px;font-size:13px;color:#fff3c8}
+
+.v16-panel{border:1px solid #d2ac5c;background:linear-gradient(135deg,#13583e,#07352a);border-radius:20px;padding:17px;margin:16px 0}
+.v16-panel h2{margin-top:6px}.v16-metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.v16-metric{padding:13px 10px;background:#0b3b2e;border-radius:13px;border:1px solid #548c6c}
+.v16-metric b{font-size:22px;color:#ffdf86;display:block;margin:4px 0}.v16-muted{font-size:12px;color:#d2e3d5}
+.v16-actions{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.v16-actions button{flex:1}
+.v16-ledger{border-bottom:1px solid #3e7760;padding:9px 0}.v16-ledger:last-child{border:0}
+.v16-clock{font-size:28px;font-weight:900;color:#ffe28b}.v16-status{border-left:3px solid #f4ce75;background:#17503a;border-radius:9px;padding:12px;margin:13px 0}
+</style></head><body><div class="app"><header class="head"><div class="brand"><img src="logo.png" class="logo" alt="Original ORORO four-leaf logo">ORORO</div><span class="badge">DEMO · NO REAL MONEY</span></header><div class="tag">Are You the Lucky One?</div><main id="view"></main></div><nav class="nav"><button data-page="home">⌂<br>Home</button><button data-page="houses">♣<br>Houses</button><button data-page="wallet">▣<br>Wallet</button><button data-page="winners">★<br>Winners</button><button data-page="settings">⚙<br>Settings</button></nav><div id="toast" class="toast" role="status"></div><section id="reveal" class="reveal" role="dialog" aria-modal="true" aria-label="Lucky draw result" hidden><div class="revealbox"><div id="confetti" aria-hidden="true"></div><img id="revealLogo" class="reveal-logo spin" src="logo.png" alt="ORORO lucky clover"><p id="revealStage" class="price">🍀 Finding the lucky one…</p><h2 id="revealTitle">FORTUNE IS CALLING</h2><div id="revealResult" hidden aria-live="polite"><p id="revealWinner"></p><div class="prize" id="revealPrize"></div><div class="reveal-detail" id="revealBreakdown"></div><p class="small">ORORO · Are You the Lucky One?</p></div><div class="reveal-actions"><button class="btn" id="revealSkip">Reveal now</button><button class="btn" id="revealWallet" hidden>💚 View wallet</button><button class="btn" id="revealAgain" hidden>🍀 Try again</button><button class="btn gold" id="revealShare" hidden>📲 Share my win</button><button class="btn gold" id="revealClose" hidden>See results →</button></div></div></section><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script>
+(function(){
+'use strict';
+const URL='https://buretprsueejekwenmhe.supabase.co';
+const PUBLIC_KEY='sb_publishable_gxafsWhV-C5ekpTSzfS3DQ_9F0MDo7t';
+let client=null;
+window.ororoSupabaseClient=null;
+function status(message){const el=document.getElementById('authStatus');if(el)el.textContent=message;}
+const COUNTRY_CURRENCY={NG:'NGN',US:'USD',GB:'GBP',GH:'GHS',ZA:'ZAR',KE:'KES',CA:'CAD'};
+let currentUserId=null,profileRequest=0;
+function profileFeedback(message){const el=document.getElementById('realProfileFeedback');if(el)el.textContent=message;}
+async function loadRealProfile(user){
+ const token=++profileRequest;
+ const panel=document.getElementById('realProfilePanel');if(!panel)return;
+ profileFeedback('Loading your profile from Supabase…');
+ const {data,error}=await client.from('profiles').select('nickname,country,currency').eq('id',user.id).maybeSingle();
+ if(token!==profileRequest||!document.getElementById('realProfilePanel'))return;
+ if(error){profileFeedback('Could not load profile: '+error.message);return;}
+ const nickname=document.getElementById('savedNickname'),country=document.getElementById('savedCountry'),note=document.getElementById('realProfileNote');
+ if(data){nickname.value=data.nickname||'';country.value=data.country||'NG';document.getElementById('savedCurrency').textContent='Currency: '+(data.currency||COUNTRY_CURRENCY[country.value]||'NGN');note.textContent='Saved in Supabase. Changes can sync between your devices.';profileFeedback('Profile loaded from Supabase.');}
+ else{nickname.value=user.user_metadata?.nickname||'';if(user.user_metadata?.country&&COUNTRY_CURRENCY[user.user_metadata.country])country.value=user.user_metadata.country;document.getElementById('savedCurrency').textContent='Currency: '+(COUNTRY_CURRENCY[country.value]||'NGN');note.textContent='Your account is verified, but no real profile has been saved yet. Please complete the fields below.';profileFeedback('Save your nickname and country to create your real profile.');}
+}
+function showSession(session){
+ const fields=document.getElementById('authFields'),logout=document.getElementById('realSignOut'),panel=document.getElementById('realProfilePanel');
+ if(!fields||!logout||!panel)return;
+ fields.hidden=!!session;logout.hidden=!session;panel.hidden=!session;
+ status(session?'Signed in to your verified ORORO account. Houses and wallets remain demo-only.':'Not signed in. Create an account or log in.');
+ if(session){if(currentUserId!==session.user.id||!document.getElementById('savedNickname').dataset.loaded){currentUserId=session.user.id;document.getElementById('savedNickname').dataset.loaded='1';loadRealProfile(session.user);}}
+ else{currentUserId=null;profileRequest++;}
+}
+async function update(){if(!client)return;try{const {data,error}=await client.auth.getUser();if(error&&error.name!=='AuthSessionMissingError')throw error;showSession(data?.user?{user:data.user}:null);}catch(e){status('Account check failed: '+e.message);}}
+async function saveRealProfile(){
+ const {data:auth,error:authError}=await client.auth.getUser();if(authError||!auth.user){profileFeedback('Please sign in first.');return;}
+ const nickname=(document.getElementById('savedNickname')?.value||'').trim();const country=document.getElementById('savedCountry')?.value||'NG';
+ if(!/^[\p{L}\p{N}_ .-]{2,24}$/u.test(nickname)){profileFeedback('Use 2–24 letters, numbers, spaces, dots, dashes or underscores.');return;}
+ if(!COUNTRY_CURRENCY[country]){profileFeedback('Select a valid country.');return;}
+ profileFeedback('Saving to Supabase…');
+ const {error}=await client.from('profiles').upsert({id:auth.user.id,nickname,country,currency:COUNTRY_CURRENCY[country]},{onConflict:'id'});
+ if(error){profileFeedback(error.code==='23505'?'That nickname is already taken. Please choose another.':'Could not save: '+error.message);return;}
+ profileFeedback('Saved successfully! Open ORORO on your other phone and tap Refresh from Supabase.');
+ await loadRealProfile(auth.user);
+}
+function errorMessage(e){status('Account error: '+(e?.message||'Unknown error'));}
+function values(){return {
+ email:(document.getElementById('realEmail')?.value||'').trim(),
+ password:document.getElementById('realPassword')?.value||'',
+ nickname:(document.getElementById('realNickname')?.value||'').trim(),
+ country:document.getElementById('realCountry')?.value||'NG'
+};}
+async function action(id){
+ if(!client){status('Supabase library could not load. Check your connection and reload.');return;}
+ if(id==='realSignOut'){try{const {error}=await client.auth.signOut();if(error)throw error;currentUserId=null;await update();}catch(e){errorMessage(e);}return;}
+ const v=values();if(!/^\S+@\S+\.\S+$/.test(v.email)||v.password.length<8){status('Enter a valid email and a password of at least 8 characters.');return;}
+ try{
+  status('Connecting securely…');
+  if(id==='realSignUp'){
+   if(v.nickname.length<2){status('Enter a lucky nickname of at least 2 characters.');return;}
+   const {data,error}=await client.auth.signUp({email:v.email,password:v.password,options:{data:{nickname:v.nickname,country:v.country}}});if(error)throw error;
+   if(data.session){
+     const {error:profileError}=await client.from('profiles').upsert({id:data.user.id,nickname:v.nickname,country:v.country,currency:({NG:'NGN',US:'USD',GB:'GBP',GH:'GHS',ZA:'ZAR'})[v.country]||'NGN'},{onConflict:'id'});
+     if(profileError){status('Account created, but profile could not save: '+profileError.message+' (nickname may already be taken).');return;}
+     await update();status('Account created and profile saved. Signed in as '+v.email+'.');
+   }else{
+     status('Check your email for the confirmation link. After confirming, return here and log in. Your nickname will be saved after login.');
+     // No password or other sensitive data is saved to localStorage.
+     sessionStorage.setItem('ororo_pending_profile',JSON.stringify({email:v.email,nickname:v.nickname,country:v.country}));
+   }
+  }else{
+   const {data,error}=await client.auth.signInWithPassword({email:v.email,password:v.password});if(error)throw error;
+   const pending=JSON.parse(sessionStorage.getItem('ororo_pending_profile')||'null');
+   if(pending&&pending.email===v.email){
+    const {error:profileError}=await client.from('profiles').upsert({id:data.user.id,nickname:pending.nickname,country:pending.country,currency:({NG:'NGN',US:'USD',GB:'GBP',GH:'GHS',ZA:'ZAR'})[pending.country]||'NGN'},{onConflict:'id'});
+    if(profileError){status('Signed in, but profile save failed: '+profileError.message);return;}
+    sessionStorage.removeItem('ororo_pending_profile');
+   }
+   await update();
+  }
+ }catch(e){errorMessage(e);}
+}
+document.addEventListener('change',e=>{if(e.target.id==='savedCountry'){const el=document.getElementById('savedCurrency');if(el)el.textContent='Currency: '+(COUNTRY_CURRENCY[e.target.value]||'NGN');}});
+document.addEventListener('click',async e=>{const b=e.target.closest('button');if(!b)return;if(b.id==='saveRealProfile'||b.id==='refreshRealProfile'){e.stopImmediatePropagation();if(b.id==='saveRealProfile')await saveRealProfile();else{const {data}=await client.auth.getUser();if(data?.user)await loadRealProfile(data.user);} }},true);
+document.addEventListener('click',function(e){const b=e.target.closest('button');if(b&&['realSignUp','realSignIn','realSignOut'].includes(b.id)){e.stopImmediatePropagation();action(b.id);}},true);
+try{if(!window.supabase)throw Error('Supabase library unavailable');client=window.supabase.createClient(URL,PUBLIC_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});window.ororoSupabaseClient=client;client.auth.onAuthStateChange(()=>setTimeout(update,0));}catch(e){errorMessage(e);}
+// Existing app re-renders its view, so refresh auth UI after account tab opens.
+const obs=new MutationObserver(()=>{if(document.getElementById('realAuth')&&document.getElementById('authStatus')?.textContent==='Checking login…')update();});
+obs.observe(document.getElementById('view'),{childList:true});update();
+})();
+</script>
+<script>
+/* ORORO V17.1: preserve DOM nodes during background refreshes.
+   Network polling may continue, but only values that actually change are patched. */
+window.ororoPatchMarkup=function(container,markup){
+  if(!container)return;
+  const template=document.createElement('template');
+  template.innerHTML=markup;
+  function sameType(a,b){return a.nodeType===b.nodeType &&
+    (a.nodeType!==1 || a.tagName===b.tagName);}
+  function syncChildren(parent,desired){
+    const wanted=Array.from(desired.childNodes);
+    for(let i=0;i<wanted.length;i++){
+      const old=parent.childNodes[i],next=wanted[i];
+      if(!old){parent.appendChild(next.cloneNode(true));continue;}
+      if(!sameType(old,next)){
+        parent.replaceChild(next.cloneNode(true),old);
+      }else{
+        syncNode(old,next);
+      }
+    }
+    while(parent.childNodes.length>wanted.length)parent.removeChild(parent.lastChild);
+  }
+  function syncNode(old,next){
+    if(old.nodeType===3 || old.nodeType===8){
+      if(old.nodeValue!==next.nodeValue)old.nodeValue=next.nodeValue;
+      return;
+    }
+    if(old.nodeType!==1)return;
+    const oldAttributes=Array.from(old.attributes);
+    for(const attribute of oldAttributes)
+      if(!next.hasAttribute(attribute.name))old.removeAttribute(attribute.name);
+    for(const attribute of Array.from(next.attributes))
+      if(old.getAttribute(attribute.name)!==attribute.value)
+        old.setAttribute(attribute.name,attribute.value);
+    // Keep focused inputs and their typed values intact during background refreshes.
+    if(old!==document.activeElement && old instanceof HTMLInputElement &&
+       old.value!==next.value)old.value=next.value;
+    syncChildren(old,next);
+  }
+  syncChildren(container,template.content);
+};
+</script>
+<script>
+(()=>{'use strict';const KEY='ororo_v7';const defs={wallet:100000,locked:0,nickname:'LuckyLeaf',sound:true,entries:[],history:[],custom:[],seq:1};let s;try{s={...defs,...JSON.parse(localStorage.getItem(KEY)||localStorage.getItem('ororo_v4')||localStorage.getItem('ororo_v3')||'{}')}}catch{s={...defs}}let page='home',selected=null,revealTimer=null,revealEntry=null;const fixed=[{id:'quick',name:'Quick Luck',fee:1000,players:5,duration:30,icon:'⚡'},{id:'lucky',name:'Lucky House',fee:20000,players:20,duration:60,icon:'🍀'},{id:'premium',name:'Premium Fortune',fee:250000,players:100,duration:360,icon:'✦'},{id:'vip',name:'VIP Fortune',fee:10000000,players:5,duration:1440,icon:'♛'}];const names=['GoldenLeaf','LuckyStar','FortuneFox','GreenClover','HopefulOne','BrightDay','Sunshine','AcePlayer','HappyPalm','Emerald'];const money=n=>'₦'+Math.round(n).toLocaleString('en-NG');const COUNTRY_OPTIONS=[['NG','Nigeria','NGN','₦'],['GH','Ghana','GHS','GH₵'],['GB','United Kingdom','GBP','£'],['US','United States','USD','$'],['ZA','South Africa','ZAR','R'],['KE','Kenya','KES','KSh'],['CA','Canada','CAD','C$']];
+let onboarding=JSON.parse(localStorage.getItem('ororo_v11_profile')||'null');let houseMode='local',houseSearch='',houseSort='recommended';
+function suggestCountry(){let loc=(navigator.language||'en-NG').split('-')[1]||'NG';return COUNTRY_OPTIONS.some(c=>c[0]===loc)?loc:'NG'}
+function region(){return COUNTRY_OPTIONS.find(c=>c[0]===(onboarding?.country||suggestCountry()))||COUNTRY_OPTIONS[0]}
+function countryPicker(value){return COUNTRY_OPTIONS.map(c=>`<option value="${c[0]}" ${c[0]===value?'selected':''}>${c[1]} · ${c[2]} (${c[3]})</option>`).join('')}
+function accountPage(){let c=region();return `<h2>🍀 Welcome to ORORO</h2><div class="notice">Version 17.1: Smooth background refreshes and automatic server-managed demo houses, voting and wallet settlement. Real profiles sync through Supabase. Real email accounts are connected to Supabase. The new automated demo house and wallet sync online; the older offline demonstrations remain separate. Phone OTP is not enabled yet.</div><div class="card" id="realAuth"><h2>🔐 Real ORORO Account</h2><div id="authStatus" class="small">Checking login…</div><div id="authFields"><label>Email address</label><input class="field" id="realEmail" type="email" autocomplete="email" placeholder="you@example.com"><label>Password</label><input class="field" id="realPassword" type="password" autocomplete="current-password" minlength="8" placeholder="At least 8 characters"><label>Lucky nickname (for sign-up)</label><input class="field" id="realNickname" maxlength="24" placeholder="Your lucky nickname"><label>Country</label><select class="field" id="realCountry">${countryPicker(c[0])}</select><div class="grid"><button class="btn gold" id="realSignUp" type="button">Create account</button><button class="btn" id="realSignIn" type="button">Log in</button></div><p class="small">Email verification may be required. Never share your password or verification links.</p></div><div id="realProfilePanel" hidden><h3>🍀 My ORORO Profile</h3><p class="small" id="realProfileNote">Loading saved profile…</p><label>Lucky nickname</label><input class="field" id="savedNickname" maxlength="24" placeholder="Choose your nickname"><label>Country</label><select class="field" id="savedCountry">${countryPicker(c[0])}</select><p class="small" id="savedCurrency"></p><button class="btn gold wide" id="saveRealProfile" type="button">Save real profile</button><button class="btn wide" id="refreshRealProfile" type="button">Refresh from Supabase</button><p class="small" id="realProfileFeedback"></p></div><button class="btn" id="realSignOut" type="button" hidden>Log out</button></div><div class="notice">Optional: The form below is the old offline demo profile, not a real login.</div><div class="card"><label>Sign-up method</label><select class="field" id="authMethod"><option value="phone">📱 Phone + OTP (preview)</option><option value="email">📧 Email + password (preview)</option></select><label>Phone number or email</label><input class="field" id="authContact" placeholder="Example: +234... or name@example.com" autocomplete="off"><label>Lucky nickname</label><input class="field" id="authNickname" maxlength="24" value="${esc(onboarding?.nickname||s.nickname)}"><label>Country</label><select class="field" id="authCountry">${countryPicker(c[0])}</select><p class="small">Suggested using browser language. Change it anytime. Currency selection does not change the demo's NGN balance.</p><button class="btn gold wide" data-profile="1">Save demo profile</button></div>`}
+function explorePanel(){let c=region();let globalPreview=[{name:'Global Clover Circle',players:20,fee:'USD 25',duration:60,icon:'🌍'},{name:'Worldwide Lucky Five',players:5,fee:'USD 100',duration:120,icon:'🍀'},{name:'Global Fortune Club',players:100,fee:'USD 10',duration:240,icon:'✦'}];let visible=houseMode==='local'?all().filter(x=>x.name.toLowerCase().includes(houseSearch.toLowerCase())):globalPreview.filter(x=>x.name.toLowerCase().includes(houseSearch.toLowerCase()));if(houseSort==='entry')visible.sort((a,b)=>houseMode==='local'?a.fee-b.fee:parseFloat(a.fee.split(' ')[1])-parseFloat(b.fee.split(' ')[1]));else if(houseSort==='time')visible.sort((a,b)=>a.duration-b.duration);let cards=houseMode==='local'?visible.map(card).join(''):visible.map(x=>`<div class="card house"><div class="icon">${x.icon}</div><div class="grow"><b>${esc(x.name)}</b><div class="small">${x.players} slots · ${x.duration} min</div><div class="price">${esc(x.fee)} per entry</div></div><span class="badge">Preview only</span></div>`).join('');return `<div class="card"><h2>🌍 Discover houses</h2><p class="small">${esc(c[1])} · ${esc(c[2])} (${esc(c[3])}) · ${houseMode==='local'?'Local':'Global'} discovery preview</p><div class="grid"><button class="btn ${houseMode==='local'?'gold':''}" data-mode="local">🏠 Local houses</button><button class="btn ${houseMode==='global'?'gold':''}" data-mode="global">🌍 Global houses</button></div><label>Find a house</label><input class="field" id="houseSearch" placeholder="Search by name" value="${esc(houseSearch)}"><label>Sort houses</label><select class="field" id="houseSort"><option value="recommended" ${houseSort==='recommended'?'selected':''}>Recommended</option><option value="entry" ${houseSort==='entry'?'selected':''}>Lowest entry first</option><option value="time" ${houseSort==='time'?'selected':''}>Shortest countdown</option></select><div class="notice">${houseMode==='local'?'Local demo houses use NGN on this device.':'Global houses are sample listings only. Joining, currency conversion and cross-border play are not active.'}</div></div><h2 class="section">${houseSort==='recommended'?'🍀 Recommended for you':'🔎 Explore houses'}</h2>${cards||'<p class="small">No matching houses.</p>'}`}
+const esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const all=()=>[...fixed,...s.custom];const save=()=>localStorage.setItem(KEY,JSON.stringify(s));const notify=t=>{let el=document.getElementById('toast');el.textContent=t;el.style.display='block';clearTimeout(notify.timer);notify.timer=setTimeout(()=>el.style.display='none',3200)};const txn=(label,amount)=>s.history.push({label,amount,date:new Date().toLocaleString(),ref:'OR-'+Date.now().toString(36).toUpperCase()+'-'+(s.history.length+1)});const remaining=e=>Math.max(0,Math.ceil((e.end-Date.now())/1000));const clock=n=>{let h=Math.floor(n/3600),m=Math.floor(n%3600/60),sec=n%60;return [h,m,sec].map(x=>String(x).padStart(2,'0')).join(':')};function card(x){return `<div class="card house"><div class="icon">${x.icon}</div><div class="grow"><b>${esc(x.name)}</b><div class="small">${x.players} slots · ${x.duration} min</div><div class="price">${money(x.fee)} per entry</div></div><button class="btn" data-open="${x.id}">View →</button></div>`}function entryCard(e){let n=e.joined.length,remain=remaining(e),expired=remain===0,vr=expired?Math.max(0,Math.ceil(((e.voteEnd||e.end+900000)-Date.now())/1000)):0,yes=Object.values(e.votes||{}).filter(v=>v==='YES').length,no=Object.values(e.votes||{}).filter(v=>v==='NO').length;return `<div class="card"><div class="row"><b>${esc(e.name)}</b><span class="badge">${n}/${e.players} joined</span></div><p class="small">${money(e.fee)} reserved · ${e.players-n} slots left</p><div class="progress"><span style="width:${100*n/e.players}%"></span></div><div class="row"><span>⏱ <strong class="count" data-timer="${e.id}">${clock(remain)}</strong></span><span class="small">${expired?'House timer expired':'Until voting'}</span></div><p class="small">Players (demo nicknames):</p><div class="chips">${e.joined.map(v=>`<span class="chip">${esc(v)}</span>`).join('')}</div>${expired?`<div class="notice">🍀 Voting open for 15 minutes. YES players enter the draw; NO players and nonvoters receive full refunds. At least 2 YES votes are required.</div><p class="price">🗳️ Voting closes in <strong data-votetimer="${e.id}">${clock(vr)}</strong></p><div class="small">YES: ${yes} · NO: ${no} · Pending: ${n-yes-no} · Your vote: <b>${e.votes?.[e.owner]||'Pending'}</b></div><div class="chips">${e.joined.map(p=>`<span class="chip">${esc(p)}: ${esc((e.votes||{})[p]||'Pending')}</span>`).join('')}</div>${!(e.votes||{})[e.owner]?`<button class="btn gold" data-vote="${e.id}" data-choice="YES">✓ YES — I'm feeling lucky</button> <button class="btn" data-vote="${e.id}" data-choice="NO">✕ NO — Refund my entry</button>`:''}<p class="small">Demo: cast votes for the simulated players to test mixed outcomes.</p><button class="btn gold" data-simvote="${e.id}" data-choice="YES">Next demo player: YES</button> <button class="btn" data-simvote="${e.id}" data-choice="NO">Next demo player: NO</button><button class="btn" data-closevote="${e.id}">⏩ End voting (demo)</button><p class="small">Projected prize from YES votes: ${money(e.fee*yes*.9)} (10% fee). The draw happens when voting closes.</p>`:`<button class="btn" data-add="${e.id}">+ Simulate player joining</button> <button class="btn gold" data-fast="${e.id}">🗳️ TEST VOTING NOW (skip timer)</button>`}<p class="small">Potential net prize with ${n} players: ${money(e.fee*n*.9)} (10% fee)</p></div>`}
+// V13: shared Supabase demo house (separate from local simulated-money houses)
+let livePoll=null,liveBusy=false;
+// V14 demo: detect newly visible participants by comparing server snapshots.
+// A 12-second polling interval requires no extra database permissions.
+let liveSeenPlayers=null;
+let liveSeenHouseId=null;
+let liveSeenAccountId=null;
+let liveActivity=[];
+let suppressNextJoinNotice=false;
+function liveToast(message){
+ const el=document.getElementById('toast');
+ if(!el)return;
+ el.textContent=message;el.style.display='block';
+ clearTimeout(window.ororoLiveToastTimeout);
+ window.ororoLiveToastTimeout=setTimeout(()=>el.style.display='none',4200);
+}
+function liveActivityHTML(){
+ if(!liveActivity.length)return '<p class="small">No new joins noticed since opening this house.</p>';
+ return liveActivity.slice(0,5).map(a=>'<p class="live-activity-item">🍀 <b>'+escLive(a.name)+'</b> joined · '+escLive(a.time)+'</p>').join('');
+}
+function renderLiveActivity(){const el=document.getElementById('ororoLiveActivity');if(el)window.ororoPatchMarkup(el,liveActivityHTML());}
+
+const getLiveClient=()=>window.ororoSupabaseClient;
+function escLive(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function liveMarkup(){return `<div class="card" style="border:1px solid #d5b963;margin:16px 0"><h2>📜 Earlier Demo Draw — V15</h2><p class="small">Real accounts, shared YES/NO votes, and server-checked 15-minute deadline. <b>DEMO ONLY: no entry fees are collected, no money is refunded or paid out.</b></p><div class="notice">🔔 Join notifications ON · Automatic refresh approximately every 12 seconds.</div><div id="ororoLiveHouse" aria-live="polite">Ready to connect. Tap Refresh Live House.</div><button class="btn gold" id="ororoLiveRefresh" type="button">↻ Refresh Live House</button> <button class="btn" id="ororoLivePreview" type="button">🔔 Preview join alert</button><p class="small" id="ororoLiveDiagnostics">Connection status: not checked yet.</p><div class="live-activity"><b>🍀 Recent joins</b><div id="ororoLiveActivity">${liveActivityHTML()}</div></div></div>`;}
+// Always use the server state to authorize voting. The UI timer is informational only.
+function formatDemoAmount(amount,currency){const n=Number(amount);if(!Number.isFinite(n))return '—';try{return new Intl.NumberFormat('en-NG',{style:'currency',currency:currency||'NGN',maximumFractionDigits:2}).format(n);}catch{return n.toLocaleString()+' '+(currency||'NGN');}}
+function safeDate(iso){const d=new Date(iso);return isNaN(d.getTime())?'—':d.toLocaleString();}
+function updateLiveVoteClock(){const t=document.getElementById('ororoVoteCountdown');if(!t)return;const deadline=Number(t.dataset.deadline);if(!Number.isFinite(deadline))return;const seconds=Math.max(0,Math.ceil((deadline-Date.now())/1000));t.textContent=clock(seconds);if(seconds===0)t.closest('.notice')?.classList.add('expired');}
+async function liveRpc(name,args={}){const c=getLiveClient();if(!c)throw Error('Supabase is not ready. Reload the page and sign in.');const timeout=new Promise((_,reject)=>setTimeout(()=>reject(Error('The request timed out. Please try Refresh again.')),16000));const {data,error}=await Promise.race([c.rpc(name,args),timeout]);if(error)throw error;return data;}
+function liveHouseHTML(h){
+ const currency=String(h.currency||'NGN');
+ const names=(Array.isArray(h.players)?h.players:[]).map(p=>String(p.nickname||'')).filter(Boolean);
+ const players=names.map(n=>'<li>🍀 '+escLive(n)+'</li>').join('');
+ const joined=Number(h.joined_count)||0,yes=Number(h.yes_count)||0,no=Number(h.no_count)||0;
+ const voting=h.status==='voting',active=h.status==='open',finished=['completed','cancelled'].includes(h.status);
+ let html='<h3>'+escLive(h.house_name)+'</h3><p><b>'+joined+' / '+Number(h.max_players)+'</b> players joined</p><p class="small">Closing time: '+escLive(safeDate(h.draw_time))+'</p><ul>'+players+'</ul>';
+ if(active){html+='<p class="notice">House open. Voting will be enabled by the demo administrator when the house closes.</p><button class="btn gold" id="ororoLiveJoin" type="button" '+(h.has_joined?'disabled':'')+'>'+(h.has_joined?'✓ You have joined':'Join Live Demo House (FREE)')+'</button>';}
+ if(voting){const d=Date.parse(h.vote_deadline||'');html+='<div class="notice"><b>🗳️ VOTING OPEN — 15 minutes</b><br>Ends '+escLive(safeDate(h.vote_deadline))+'<br><span style="font-size:24px;font-weight:bold" id="ororoVoteCountdown" data-deadline="'+(Number.isFinite(d)?d:'')+'">'+(Number.isFinite(d)?clock(Math.max(0,Math.ceil((d-Date.now())/1000))):'—')+'</span></div><p class="small">YES: <b>'+yes+'</b> · NO: <b>'+no+'</b> · Waiting: <b>'+Math.max(0,joined-yes-no)+'</b></p><p>Your vote: <b>'+escLive(h.my_vote?String(h.my_vote).toUpperCase():'Not submitted')+'</b></p>';
+ if(!h.has_joined)html+='<p class="small">Only players who joined before voting began can vote.</p>';
+ else if(h.my_vote)html+='<p class="notice">✓ Your vote is securely recorded. You cannot change it.</p>';
+ else html+='<button class="btn gold" id="ororoVoteYes" type="button">✓ YES — I’m feeling lucky!</button> <button class="btn" id="ororoVoteNo" type="button">✕ NO — Leave this draw</button>';
+ html+='<p class="small">Only YES voters are eligible for the demo draw. NO votes and non-responses are excluded. At least two YES votes are needed. All refund amounts are illustrations only.</p>';
+ }
+ if(finished){if(h.status==='completed')html+='<div class="notice"><h3>🏆 OIL DEY YOUR HEAD!</h3><b>Demo winner: '+escLive(h.winner_nickname||'—')+'</b><p>YES voters in draw: '+yes+'</p><p>Illustrative pool: '+escLive(formatDemoAmount(h.demo_pool,currency))+'</p><p>Illustrative ORORO fee (10%): '+escLive(formatDemoAmount(h.demo_fee,currency))+'</p><p>Illustrative prize: <b>'+escLive(formatDemoAmount(h.demo_prize,currency))+'</b></p><p class="small">No wallet was credited. No funds were held or transferred.</p></div>';
+ else html+='<div class="notice">🚫 Demo house cancelled. Fewer than two YES votes. All entries excluded; no money was ever held.</div>';
+ }
+ html+='<p class="small" id="ororoLiveMessage" aria-live="polite"></p>';
+ return html;
+}
+const ororoLiveBoundButtons=new WeakSet();
+async function loadLiveHouse(){
+ const target=document.getElementById('ororoLiveHouse'),diag=document.getElementById('ororoLiveDiagnostics');if(!target)return;
+ if(liveBusy){if(diag)diag.textContent='Already refreshing…';return;}
+ const client=getLiveClient();if(!client){target.textContent='Supabase is not connected. Reload the app.';if(diag)diag.textContent='Connection unavailable.';return;}
+ liveBusy=true;if(diag&&!diag.textContent.includes('Connected to Supabase'))diag.textContent='Checking Supabase account and shared house…';
+ try{
+  const {data:auth,error:authError}=await Promise.race([client.auth.getUser(),new Promise((_,reject)=>setTimeout(()=>reject(Error('Sign-in request timed out')),16000))]);
+  if(authError)throw authError;
+  if(!auth?.user){target.textContent='Please sign in under Settings → Account, then return to Houses.';return;}
+  if(liveSeenAccountId!==auth.user.id){liveSeenAccountId=auth.user.id;liveSeenHouseId=null;liveSeenPlayers=null;liveActivity=[];renderLiveActivity();}
+  const h=await liveRpc('ororo_v15_house_snapshot');
+  if(!h){target.textContent='No shared demo house was found. Run the V15 setup SQL in Supabase.';return;}
+  const currentNames=(Array.isArray(h.players)?h.players:[]).map(p=>String(p.nickname||'')).filter(Boolean);
+  const old=liveSeenHouseId===h.house_id?liveSeenPlayers:null;
+  const joined=old?currentNames.filter(n=>!old.has(n)):[];
+  liveSeenHouseId=h.house_id;liveSeenPlayers=new Set(currentNames);
+  if(suppressNextJoinNotice)suppressNextJoinNotice=false;
+  else if(joined.length){const stamp=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});for(const name of joined.slice(0,20))liveActivity.unshift({name,time:stamp});liveActivity=liveActivity.slice(0,10);liveToast(joined.length===1?'🍀 '+joined[0]+' just joined '+h.house_name+'!':'🍀 '+joined.length+' players joined '+h.house_name+'!');}
+  renderLiveActivity();
+  if(!document.getElementById('ororoLiveHouse'))return;
+  window.ororoPatchMarkup(target,liveHouseHTML(h));updateLiveVoteClock();
+  const join=target.querySelector('#ororoLiveJoin');if(join&&!ororoLiveBoundButtons.has(join)){ororoLiveBoundButtons.add(join);join.addEventListener('click',async()=>{if(join.disabled)return;join.disabled=true;const msg=document.getElementById('ororoLiveMessage');if(msg)msg.textContent='Joining shared house…';try{const result=await liveRpc('ororo_join_live_demo',{p_house_id:h.house_id});suppressNextJoinNotice=true;liveToast('🍀 '+String(result||'Joined!'));setTimeout(loadLiveHouse,250);}catch(e){if(msg)msg.textContent='Join error: '+(e.message||String(e));join.disabled=false;}});}
+  for(const [id,choice] of [['ororoVoteYes','yes'],['ororoVoteNo','no']]){const btn=target.querySelector('#'+id);if(btn&&!ororoLiveBoundButtons.has(btn)){ororoLiveBoundButtons.add(btn);btn.addEventListener('click',async()=>{const yesButton=target.querySelector('#ororoVoteYes'),noButton=target.querySelector('#ororoVoteNo');if(yesButton)yesButton.disabled=true;if(noButton)noButton.disabled=true;const msg=target.querySelector('#ororoLiveMessage');if(msg)msg.textContent='Submitting your '+choice.toUpperCase()+' vote securely…';try{const result=await liveRpc('ororo_cast_demo_vote',{p_house_id:h.house_id,p_vote:choice});liveToast('🗳️ '+String(result));setTimeout(loadLiveHouse,250);}catch(e){if(msg)msg.textContent='Voting error: '+(e.message||String(e));if(yesButton)yesButton.disabled=false;if(noButton)noButton.disabled=false;}});}}
+  if(diag)diag.textContent='Connected to Supabase ✓ Last updated '+new Date().toLocaleTimeString()+' · Status: '+h.status;
+ }catch(e){target.textContent='⚠️ Live house error: '+(e?.message||String(e));if(diag)diag.textContent='If this mentions a missing function, run V15 setup SQL first. Error code: '+(e?.code||'unknown');}
+ finally{liveBusy=false;}
+}
+document.addEventListener('click',ev=>{if(ev.target.closest('#ororoLivePreview')){ev.preventDefault();liveToast('🍀 PREVIEW ONLY: A player just joined Lucky House!');return;}if(ev.target.closest('#ororoLiveRefresh')){ev.preventDefault();const el=document.getElementById('ororoLiveDiagnostics');if(el)el.textContent='Refresh tapped — checking…';loadLiveHouse();}});
+setInterval(()=>{if(page==='houses'&&!document.hidden&&document.getElementById('ororoLiveHouse')&&!liveBusy)loadLiveHouse()},12000);
+setInterval(()=>{if(page==='houses')updateLiveVoteClock()},1000);
+
+function render(){document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('on',b.dataset.page===page));let v=document.getElementById('view');if(page==='account')v.innerHTML=accountPage();else if(page==='home')v.innerHTML=`<div class="card gold"><b>Demo Wallet</b><div class="balance">${money(s.wallet)}</div><div class="row"><span>Reserved: ${money(s.locked)}</span><button class="btn" data-page="wallet">Wallet →</button></div></div><div class="notice">Version 16.1: a separate cross-device SIMULATED wallet is now available in Houses and Wallet. This older offline wallet remains for previous demos. No real money is accepted or paid.</div><h2 class="section">Choose Your House</h2>${explorePanel()}<button class="btn gold wide" data-page="create">＋ Create Open House</button>`;else if(page==='houses')v.innerHTML=`<h2>Houses</h2><section id="ororoV16House" aria-live="polite"><div class="card">🍀 Loading Version 16 demo house…</div></section>${liveMarkup()}<p class="small">Local demo · Voting test: Join a house, add 2 demo players, then tap TEST VOTING NOW under Your active entries.</p>${explorePanel()}<button class="btn gold wide" data-page="create">＋ Create Open House</button><h2 class="section">Your active entries</h2>${s.entries.filter(e=>e.status==='waiting').map(entryCard).join('')||'<p class="small">No active entries yet.</p>'}`;else if(page==='detail'){let x=selected;v.innerHTML=`<button class="btn" data-page="houses">← Houses</button><div class="card" style="text-align:center"><div style="font-size:55px">${x.icon}</div><h2>${esc(x.name)}</h2><div class="count">${money(x.fee)}</div><p>${x.players} slots · ${x.duration} minute countdown</p><p>Full pool: ${money(x.fee*x.players)}</p><p>ORORO commission (10%): ${money(x.fee*x.players*.1)}</p><p class="price">Net prize if full: ${money(x.fee*x.players*.9)}</p><p class="small">Available demo wallet: ${money(s.wallet)}</p><button class="btn gold wide" data-join="${x.id}">Reserve ${money(x.fee)} & Join</button></div><div class="notice">Demo entrants are simulated. This local demo does not represent the shared Supabase house. Real-money operation requires licensing and audited financial controls.</div>`}else if(page==='wallet')v.innerHTML=`<h2>Wallet</h2><section id="ororoV16Wallet" aria-live="polite"><div class="card">💚 Loading your synchronized V16 demo wallet…</div></section><h2>Offline legacy demo wallet</h2><div class="notice">This older local wallet stays on this device and is NOT part of the new shared V16 house. Its +₦10,000, withdrawal and reset buttons do not affect Supabase balances.</div><div class="card gold"><div>Available</div><div class="balance">${money(s.wallet)}</div><div>🔒 Reserved: ${money(s.locked)}</div><div style="margin-top:12px">🏆 Lifetime winnings: <b>${money(s.history.filter(t=>t.label==='Demo win').reduce((a,t)=>a+t.amount,0))}</b></div></div><div class="grid"><button class="btn" data-fund="1">+ ₦10,000 demo</button><button class="btn" data-withdraw="1">↗ Request demo withdrawal</button><button class="btn" data-reset="1">Reset demo</button></div><h2>History</h2>${s.history.slice().reverse().map(t=>`<div class="card row"><div><b>${esc(t.label)}</b><div class="small">${esc(t.date)} · ${esc(t.ref||"Legacy demo entry")}</div></div><b class="price">${t.amount>=0?'+':''}${money(t.amount)}</b></div>`).join('')||'<p class="small">No transactions yet.</p>'}`;else if(page==='winners')v.innerHTML=`<h2>Demo Results</h2>${s.entries.filter(e=>e.status!=='waiting').slice().reverse().map(e=>`<div class="card"><b>${esc(e.name)}</b><p class="price">${e.status==='won'?'🏆 '+esc(e.winner)+' won '+money(e.payout):e.status==='lost'?'🏆 '+esc(e.winner)+' won '+money(e.payout||0):'Funds released'}</p><div class="small">${esc(e.date||'')}</div>${e.winner?`<button class="btn gold" data-share="${e.id}">📲 Share winning card</button>`:''}</div>`).join('')||'<p class="small">No completed draws yet.</p>'}`;else if(page==='settings')v.innerHTML=`<h2>Settings</h2><button class="btn gold wide" data-page="account">👤 Account & demo profile</button><p class="small">${esc(region()[1])} · ${esc(region()[2])} · ${onboarding?'Saved locally':'Not registered'}</p><label>Nickname</label><input class="field" id="nick" maxlength="24" value="${esc(s.nickname)}"><button class="btn gold" data-nick="1">Save nickname</button><div class="card row"><b>Sound</b><button class="btn" data-sound="1">${s.sound?'On 🔊':'Off 🔇'}</button></div><div class="notice">All balances are simulated. Real-money gambling requires licensing, age checks, responsible-play controls, and audited systems.</div>`;else if(page==='create')v.innerHTML=`<button class="btn" data-page="houses">← Back</button><h2>Create Open House</h2><label>House name</label><input class="field" id="name" maxlength="30" placeholder="My Lucky House"><label>Entry amount (demo ₦)</label><input class="field" id="fee" type="number" min="1000" max="50000000" value="5000"><label>Players (2–500)</label><input class="field" id="players" type="number" min="2" max="500" value="5"><label>Countdown (minutes)</label><input class="field" id="duration" type="number" min="1" max="1440" value="30"><label>Visibility</label><select class="field" id="privacy"><option>Public</option><option>Private</option></select><button class="btn gold wide" data-create="1">Create Demo House</button><p class="small">Private invitation codes require a future multiplayer server.</p>`}function chime(){if(!s.sound)return;try{let A=window.AudioContext||window.webkitAudioContext;if(!A)return;let ctx=new A();[523,659,784,1046].forEach((hz,i)=>{let o=ctx.createOscillator(),g=ctx.createGain();o.type='sine';o.frequency.value=hz;g.gain.setValueAtTime(.0001,ctx.currentTime+i*.14);g.gain.exponentialRampToValueAtTime(.12,ctx.currentTime+i*.14+.025);g.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+i*.14+.28);o.connect(g);g.connect(ctx.destination);o.start(ctx.currentTime+i*.14);o.stop(ctx.currentTime+i*.14+.3)});setTimeout(()=>ctx.close().catch(()=>{}),1400)}catch{}}function reveal(e){revealEntry=e;let box=document.getElementById('reveal'),result=document.getElementById('revealResult'),logo=document.getElementById('revealLogo'),stage=document.getElementById('revealStage'),title=document.getElementById('revealTitle'),skip=document.getElementById('revealSkip'),close=document.getElementById('revealClose');box.hidden=false;result.hidden=true;close.hidden=true;skip.hidden=false;logo.classList.add('spin');stage.textContent='🍀 Finding the lucky one…';title.textContent='FORTUNE IS CALLING';document.getElementById('confetti').innerHTML='';clearTimeout(revealTimer);revealTimer=setTimeout(finishReveal,window.matchMedia('(prefers-reduced-motion: reduce)').matches?100:3200)}function finishReveal(){clearTimeout(revealTimer);let e=revealEntry;if(!e)return;document.getElementById('revealLogo').classList.remove('spin');document.getElementById('revealStage').textContent='🍀 THE LUCKY ONE IS…';document.getElementById('revealTitle').textContent=e.status==='won'?'🪔 OIL DEY YOUR HEAD!':'🏆 OIL DEY THEIR HEAD!';document.getElementById('revealWinner').textContent='🏆 '+e.winner;document.getElementById('revealPrize').textContent=money(e.payout);let pool=e.pool||e.fee*e.joined.length;document.getElementById('revealBreakdown').innerHTML='Total pool: '+money(pool)+'<br>ORORO commission (10%): '+money(pool*.1)+'<br>Winner’s prize: '+money(e.payout)+(e.status==='won'?'<br>✓ Credited to your demo wallet':'<br>Demo winner — your wallet was not credited');document.getElementById('revealResult').hidden=false;document.getElementById('revealSkip').hidden=true;document.getElementById('revealClose').hidden=false;document.getElementById('revealWallet').hidden=e.status!=='won';document.getElementById('revealAgain').hidden=false;document.getElementById('revealShare').hidden=false;let confetti=document.getElementById('confetti');confetti.innerHTML=Array.from({length:24},(_,i)=>'<span class="spark" style="left:'+((i*37)%100)+'%;animation-delay:-'+(i*.13)+'s">'+(i%3===0?'🍀':i%3===1?'✦':'✨')+'</span>').join('');chime()}async function shareWin(e){if(!e||!e.winner)return;try{const c=document.createElement('canvas');c.width=1080;c.height=1350;const g=c.getContext('2d');const bg=g.createLinearGradient(0,0,1080,1350);bg.addColorStop(0,'#146a48');bg.addColorStop(1,'#04271e');g.fillStyle=bg;g.fillRect(0,0,1080,1350);g.textAlign='center';g.fillStyle='#ffdd80';g.font='bold 94px Arial';g.fillText('🍀 ORORO',540,230);g.font='bold 64px Arial';g.fillText('OIL DEY YOUR HEAD!',540,435);g.fillStyle='#ffffff';g.font='bold 48px Arial';g.fillText('THE LUCKY ONE',540,590);g.font='bold 62px Arial';g.fillText(e.winner.slice(0,22),540,690);g.fillStyle='#ffdd80';g.font='bold 100px Arial';g.fillText(money(e.payout),540,840);g.fillStyle='#ffffff';g.font='40px Arial';g.fillText('WHO IS THE NEXT LUCKY ONE?',540,1030);g.font='30px Arial';g.fillText('ORORO · Demo draw celebration',540,1190);const blob=await new Promise(resolve=>c.toBlob(resolve,'image/png'));if(!blob)throw Error('Could not create card');const file=new File([blob],'ORORO-winning-card.png',{type:'image/png'});if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title:'ORORO lucky win'});}else{const a=document.createElement('a');const url=URL.createObjectURL(blob);a.href=url;a.download='ORORO-winning-card.png';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),3000);notify('Winning card saved. Share it from your photos or files.')}}catch(err){if(err.name!=='AbortError')notify('Sharing unavailable on this browser. Please try again.')}}document.getElementById('revealSkip').addEventListener('click',finishReveal);document.getElementById('revealWallet').addEventListener('click',()=>{document.getElementById('reveal').hidden=true;page='wallet';render()});document.getElementById('revealAgain').addEventListener('click',()=>{document.getElementById('reveal').hidden=true;page='houses';render()});document.getElementById('revealShare').addEventListener('click',()=>shareWin(revealEntry));document.getElementById('revealClose').addEventListener('click',()=>{document.getElementById('reveal').hidden=true;revealEntry=null;page='winners';render()});function refundOwner(e,label){if(e.refunded)return;e.refunded=true;s.wallet+=e.fee;s.locked=Math.max(0,s.locked-e.fee);txn(label,e.fee)}function settle(e,proceed){if(e.status!=='waiting')return;if(!proceed){e.status='cancelled';refundOwner(e,'House funds released');e.date=new Date().toLocaleString();return}let eligible=e.joined.filter(p=>e.votes?.[p]==='YES');if(eligible.length<2){settle(e,false);return}e.drawPlayers=eligible;e.pool=e.fee*eligible.length;let winner=eligible[Math.floor(Math.random()*eligible.length)];e.winner=winner;e.payout=e.pool*.9;e.status=winner===e.owner?'won':'lost';if(e.votes[e.owner]!=='YES')refundOwner(e,'Voting refund');else{s.locked=Math.max(0,s.locked-e.fee);if(e.status==='won'){s.wallet+=e.payout;txn('Demo win',e.payout)}else txn('Draw completed',0)}e.date=new Date().toLocaleString();reveal(e)}function finalizeVote(e){if(e.status!=='waiting')return;let yes=e.joined.filter(p=>e.votes?.[p]==='YES');if(yes.length<2){settle(e,false);notify('Fewer than two YES votes. All entries refunded.')}else{settle(e,true);notify('Voting closed. Draw completed for YES voters.');page='winners'}}function addPlayer(e){if(e.joined.length>=e.players||remaining(e)===0)return;let idx=e.joined.length-1;let nick=names[idx%names.length]+(idx>=names.length?String(Math.floor(idx/names.length)+1):'');e.joined.push(nick);if(e.joined.length>=e.players){e.votes=Object.fromEntries(e.joined.map(p=>[p,'YES']));settle(e,true);page='winners'}}function vote(e,player,choice){if(!e||e.status!=='waiting'||remaining(e)>0||Date.now()>=(e.voteEnd||e.end+900000)||!e.joined.includes(player))return;e.votes=e.votes||{};if(e.votes[player])return;e.votes[player]=choice;if(player===e.owner&&choice==='NO'){refundOwner(e,'NO vote refund');notify('Your entry was refunded. Other YES voters may continue.')}else notify(player+' voted '+choice);if(e.joined.every(p=>e.votes[p]))finalizeVote(e)}function walletDialog(kind){
+let old=document.getElementById('ororoWalletDialog');if(old)old.remove();
+let box=document.createElement('div');box.id='ororoWalletDialog';
+box.style.cssText='position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.78);display:flex;align-items:center;justify-content:center;padding:20px';
+box.innerHTML=kind==='withdraw'
+?`<div style="background:#103e31;color:white;border:1px solid #c8a64d;border-radius:18px;padding:24px;width:min(100%,420px);box-shadow:0 10px 40px #0008"><h2>Request demo withdrawal</h2><p>Available: ${money(s.wallet)}</p><p class="small">Demo only. No real bank transfer.</p><label for="ororoWithdrawAmount">Amount (₦)</label><input id="ororoWithdrawAmount" type="number" inputmode="numeric" min="1" max="${s.wallet}" placeholder="Enter amount" style="box-sizing:border-box;width:100%;padding:14px;margin:10px 0 16px;border-radius:10px;font-size:18px"><p id="ororoDialogError" style="color:#ffd47a"></p><button class="btn gold" id="ororoConfirmWithdraw">Confirm withdrawal</button> <button class="btn" id="ororoCancelDialog">Cancel</button></div>`
+:`<div style="background:#103e31;color:white;border:1px solid #c8a64d;border-radius:18px;padding:24px;width:min(100%,420px)"><h2>Reset demo?</h2><p>This will clear your demo houses, wallet history and transactions and restore ₦100,000.</p><button class="btn gold" id="ororoConfirmReset">Yes, reset demo</button> <button class="btn" id="ororoCancelDialog">Cancel</button></div>`;
+document.body.appendChild(box);
+box.querySelector('#ororoCancelDialog').onclick=()=>box.remove();
+box.addEventListener('click',ev=>{if(ev.target===box)box.remove()});
+if(kind==='withdraw'){
+box.querySelector('#ororoConfirmWithdraw').onclick=()=>{
+let n=Number(box.querySelector('#ororoWithdrawAmount').value);
+if(!Number.isSafeInteger(n)||n<=0||n>s.wallet){box.querySelector('#ororoDialogError').textContent='Enter an amount between ₦1 and '+money(s.wallet);return}
+s.wallet-=n;txn('Demo withdrawal request',-n);save();box.remove();render();notify('Demo withdrawal recorded. No bank transfer was made.');
+};
+}else{
+box.querySelector('#ororoConfirmReset').onclick=()=>{s={...defs,entries:[],history:[],custom:[]};save();box.remove();page='wallet';render();notify('Demo reset to ₦100,000.')};
+}
+}document.addEventListener('change',ev=>{if(ev.target.id==='houseSort'){houseSort=ev.target.value;render()}});document.addEventListener('input',ev=>{if(ev.target.id==='houseSearch'){houseSearch=ev.target.value;let pos=ev.target.selectionStart;render();let el=document.getElementById('houseSearch');if(el){el.focus();el.setSelectionRange(pos,pos)}}});document.addEventListener('click',ev=>{let b=ev.target.closest('button');if(!b)return;let d=b.dataset;if(d.page){page=d.page;render();return}if(d.mode){houseMode=d.mode;render();return}if(d.profile){let method=document.getElementById('authMethod').value,contact=document.getElementById('authContact').value.trim(),nickname=document.getElementById('authNickname').value.trim(),country=document.getElementById('authCountry').value;if(!nickname||nickname.length<2){notify('Choose a nickname with at least 2 characters');return}if(contact&&(method==='email'?!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(contact):contact.replace(/\D/g,'').length<7)){notify('Check the contact format');return}onboarding={method,contact:contact?'Provided for demo (not verified)':'Not provided',nickname,country};localStorage.setItem('ororo_v11_profile',JSON.stringify(onboarding));s.nickname=nickname;save();page='home';render();notify('Demo profile saved. No account was created on a server.');return}if(d.open){selected=all().find(x=>x.id===d.open);page='detail';render();return}if(d.join){let x=all().find(x=>x.id===d.join);if(!x)return;if(s.wallet<x.fee){notify('Insufficient demo funds');return}if(s.entries.some(e=>e.status==='waiting'&&e.houseId===x.id)){notify('You already joined this demo house');return}s.wallet-=x.fee;s.locked+=x.fee;s.entries.push({id:s.seq++,houseId:x.id,name:x.name,fee:x.fee,players:x.players,end:Date.now()+x.duration*60000,joined:[s.nickname],owner:s.nickname,status:'waiting'});txn('Reserved: '+x.name,-x.fee);page='houses';notify('Entry reserved!');save();render();return}if(d.add){let e=s.entries.find(e=>e.id===+d.add);if(e&&e.status==='waiting'){addPlayer(e);save();render()}return}if(d.fast){let e=s.entries.find(e=>e.id===+d.fast);if(e&&e.status==='waiting'){e.end=Date.now()-1000;e.voteEnd=Date.now()+900000;save();render()}return}if(d.vote){let e=s.entries.find(e=>e.id===+d.vote);if(e){vote(e,e.owner||s.nickname,d.choice);save();render()}return}if(d.simvote){let e=s.entries.find(e=>e.id===+d.simvote);if(e&&e.status==='waiting'){let p=e.joined.find(p=>!e.votes[p]);if(p){vote(e,p,d.choice||'YES');save();render()}}return}if(d.closevote){let e=s.entries.find(e=>e.id===+d.closevote);if(e&&e.status==='waiting'){finalizeVote(e);save();render()}return}if(d.cancel){let e=s.entries.find(e=>e.id===+d.cancel);if(e){settle(e,false);save();render();notify('Demo funds released')}return}if(d.share){let e=s.entries.find(x=>x.id===+d.share);if(e)shareWin(e);return}if(d.withdraw){walletDialog('withdraw');return}if(d.fund){s.wallet+=10000;txn('Demo top-up',10000);save();render();return}if(d.reset){walletDialog('reset');return}if(d.nick){let n=document.getElementById('nick').value.trim();if(n){s.nickname=n;save();notify('Nickname saved')}return}if(d.sound){s.sound=!s.sound;save();render();return}if(d.create){let name=document.getElementById('name').value.trim()||'Open House',fee=Number(document.getElementById('fee').value),players=Number(document.getElementById('players').value),duration=Number(document.getElementById('duration').value),privacy=document.getElementById('privacy').value;if(!Number.isSafeInteger(fee)||fee<1000||fee>50000000||!Number.isInteger(players)||players<2||players>500||!Number.isInteger(duration)||duration<1||duration>1440){notify('Please check the amounts and player count');return}s.custom.push({id:'custom'+s.seq++,name:name+' ('+privacy+')',fee,players,duration,icon:'🍀'});save();page='houses';render();notify('Demo house created')}});setInterval(()=>{if(page==='houses'){for(let e of s.entries.filter(e=>e.status==='waiting')){let t=document.querySelector('[data-timer="'+e.id+'"]');if(t){let r=remaining(e);t.textContent=clock(r);if(r===0&&t.dataset.expired!=='1'){e.voteEnd=e.voteEnd||e.end+900000;save();render();break}}}for(let e of s.entries.filter(e=>e.status==='waiting'&&remaining(e)===0)){e.voteEnd=e.voteEnd||e.end+900000;if(Date.now()>=e.voteEnd){finalizeVote(e);save();render();break}let vt=document.querySelector('[data-votetimer="'+e.id+'"]');if(vt)vt.textContent=clock(Math.max(0,Math.ceil((e.voteEnd-Date.now())/1000)))}}},1000);if(!onboarding)page='account';render();document.addEventListener('click',e=>{if(e.target.closest('[data-page=houses]'))setTimeout(loadLiveHouse,250)});})();
+</script>
+<script>
+/* ORORO V17.1 — silent differential updates; automated demo lifecycle + server-owned balances.
+   This module is deliberately separate from the previous offline wallet.
+   NO actual deposits, withdrawals, payment provider or live gambling. */
+(()=>{'use strict';
+const ROOT=document.getElementById('view');
+let busy=false, cachedHouse=null, cachedWallet=null, cachedAutomation=null, cachedRecent=null, cachedEnsure=null, activeAccount=null, lastLoad=0;
+const escapeHTML=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt=v=>'₦'+Math.abs(Number(v||0)).toLocaleString('en-NG',{maximumFractionDigits:0});
+const delta=v=>Number(v)===0?'₦0':(Number(v)<0?'−':'+')+fmt(v);
+const when=x=>{const d=new Date(x);return Number.isFinite(d.getTime())?d.toLocaleString():'—'};
+const getClient=()=>window.ororoSupabaseClient;
+const $=id=>document.getElementById(id);
+function toast(message){const el=$('toast');if(!el)return;el.textContent=message;el.style.display='block';clearTimeout(window.ororoV16Toast);window.ororoV16Toast=setTimeout(()=>el.style.display='none',4500);}
+function showError(message){for(const id of ['ororoV16House','ororoV16Wallet']){const el=$(id);if(!el)continue;const status=el.querySelector('#v16Message');if(status){status.textContent='⚠️ '+message+' · Previous data shown.';}else if(!cachedHouse&&!cachedWallet){window.ororoPatchMarkup(el,'<div class="v16-panel"><h2>🍀 ORORO V17</h2><p class="v16-status">'+escapeHTML(message)+'</p><button class="btn" id="v16Refresh" type="button">↻ Retry connection</button></div>');}}}
+async function rpc(name,args={}){
+ const c=getClient();if(!c)throw Error('Supabase library is not loaded. Open ORORO online and reload.');
+ const result=await Promise.race([
+   c.rpc(name,args),
+   new Promise((_,reject)=>setTimeout(()=>reject(Error('Supabase timed out. Try Refresh again.')),16000))
+ ]);
+ if(result.error)throw result.error;
+ return result.data;
+}
+function walletCard(wallet){
+ if(!wallet)return '<div class="v16-panel">🔐 Sign in to use your cross-device demo wallet.</div>';
+ const history=Array.isArray(wallet.transactions)?wallet.transactions:[];
+ const labels={starter_credit:'Initial demo credit',reserve:'House entry reserved',refund:'Full demo refund',entry_settled:'Draw entry settled',win:'🏆 Demo winnings credited'};
+ const lines=history.map(t=>'<div class="v16-ledger"><b>'+escapeHTML(labels[t.kind]||t.kind)+'</b><div class="v16-muted">'+escapeHTML(when(t.created_at))+' · Ref '+escapeHTML(String(t.reference||'').slice(0,24))+'…</div><div>Available: '+delta(t.available_change)+' · Reserved: '+delta(t.reserved_change)+'</div></div>').join('');
+ return '<div class="v16-panel"><h2>💚 V17.1 — Shared Demo Wallet</h2><p class="v16-muted">Synced through Supabase across both phones. All amounts are simulated. No real deposits or withdrawals.</p><div class="v16-metrics"><div class="v16-metric">Available<b>'+fmt(wallet.available)+'</b></div><div class="v16-metric">Reserved<b>'+fmt(wallet.reserved)+'</b></div></div><p>🏆 Total demo winnings: <b>'+fmt(wallet.lifetime_winnings)+'</b></p><button class="btn gold" id="v16Refresh" type="button">↻ Refresh live wallet</button><h3>Live transaction receipts</h3>'+(lines||'<p class="v16-muted">No transactions yet.</p>')+'</div>';
+}
+function shortClock(t){const n=Math.max(0,Math.ceil((Date.parse(t)-Date.now())/1000));const h=Math.floor(n/3600),m=Math.floor((n%3600)/60),sec=n%60;return [h,m,sec].map(x=>String(x).padStart(2,'0')).join(':');}
+function updateClock(){for(const id of ['v16Countdown','v17HouseCountdown']){const el=$(id);if(el&&el.dataset.deadline)el.textContent=shortClock(el.dataset.deadline);}}
+function houseCard(h,w){
+ if(!h)return '<div class="v16-panel"><h2>🍀 ORORO V17 Auto House</h2><p>No active demo house loaded. Check the automation status and try Refresh.</p><button class="btn" id="v16Refresh">↻ Refresh</button></div>';
+ const people=(Array.isArray(h.players)?h.players:[]).map(p=>'<li>🍀 '+escapeHTML(p.nickname)+' <span class="v16-muted">('+escapeHTML(p.status)+')</span></li>').join('');
+ const count=Number(h.joined_count)||0, yes=Number(h.yes_count)||0,no=Number(h.no_count)||0;
+ let action='';
+ if(h.status==='open'){
+  action='<div class="v16-status"><b>⏳ NEXT ROUND — House entry countdown</b><br><span class="v16-clock" id="v17HouseCountdown" data-deadline="'+escapeHTML(h.draw_time||'')+'">'+shortClock(h.draw_time)+'</span><p class="v16-muted">This countdown is for the NEXT house, not another vote in the completed draw. When this house closes, voting starts if at least 2 players joined. A full house proceeds directly to a demo draw.</p></div>'+
+    (h.has_joined?'<button class="btn" disabled>✓ You have joined — ₦20,000 demo reserved</button>':'<button class="btn gold" id="v16Join" type="button">🍀 Join house — Reserve ₦20,000 demo</button>');
+ } else if(h.status==='voting'){
+   action='<div class="v16-status">🗳️ <b>VOTING OPEN — up to 15 minutes</b><p>Ends '+escapeHTML(when(h.vote_deadline))+'</p><span class="v16-clock" id="v16Countdown" data-deadline="'+escapeHTML(h.vote_deadline||'')+'">'+shortClock(h.vote_deadline)+'</span></div><p>YES: '+yes+' · NO: '+no+' · Waiting: '+Math.max(0,count-yes-no)+'</p><p>Your vote: <b>'+escapeHTML(h.my_vote?String(h.my_vote).toUpperCase():'Not submitted')+'</b></p>';
+   if(h.my_vote){action+='<div class="v16-status">✓ Your vote is recorded. You cannot vote again.'+(h.my_vote==='no'?' Full demo entry has been returned to your wallet.':'')+'</div>';}
+   else if(h.has_joined){action+='<div class="v16-actions"><button class="btn gold" id="v16Yes">✓ YES — Feeling lucky!</button><button class="btn" id="v16No">✕ NO — Full demo refund</button></div>';}
+   else{action+='<p class="v16-muted">Only previously joined players can vote.</p>';}
+   action+='<p class="v16-muted">NO voters receive an immediate demo refund. Once everyone has voted, ORORO settles immediately; otherwise the original 15-minute deadline applies. Nonvoters receive a refund at expiry. At least two YES votes are required.</p>';
+ } else if(h.status==='completed'){
+   const r=h.result||{};
+   action='<div class="v16-status"><h2>🏆 OIL DEY YOUR HEAD!</h2><b>Demo winner: '+escapeHTML(h.winner_nickname||'—')+'</b><p>YES voters: '+yes+' · Demo pool: '+fmt(r.pool)+'</p><p>ORORO illustrative fee (10%): '+fmt(r.fee)+'</p><p class="price">Winner credited: '+fmt(r.prize)+' DEMO</p><p class="v16-muted">Only the winner received a credit in their Supabase demo wallet. No real funds moved.</p></div>';
+ } else if(h.status==='cancelled'){
+   action='<div class="v16-status">🚫 Demo round cancelled (fewer than 2 YES). Every entry is fully refunded in the Supabase demo wallet.</div>';
+ }
+ return '<div class="v16-panel"><div class="row"><h2>🍀 Lucky House — V17.1 Auto Demo</h2><span class="badge">DEMO ONLY</span></div><p class="v16-muted">Real accounts · automatic server-controlled rounds · DEMO funds only</p><p>Entry: <b>'+fmt(h.entry_amount)+'</b> · Players: <b>'+count+' / '+Number(h.max_players)+'</b></p><p class="v16-muted">Current round status: '+escapeHTML(h.status)+' · Closes '+escapeHTML(when(h.draw_time))+'</p><ul>'+people+'</ul><div class="v16-metrics"><div class="v16-metric">My available<b>'+fmt(w?.available||0)+'</b></div><div class="v16-metric">My reserved<b>'+fmt(w?.reserved||0)+'</b></div></div>'+action+'<div class="v16-actions"><button class="btn" id="v16Refresh" type="button">↻ Refresh live house</button><button class="btn" data-page="wallet" type="button">💚 View demo wallet</button></div><p class="v16-muted" id="v16Message">Last synced '+escapeHTML(new Date().toLocaleTimeString())+'</p></div>';
+}
+function recentResultCard(r){
+ if(!r || !r.status)return '';
+ const title=r.status==='completed'?'🏆 Previous demo winner: '+escapeHTML(r.winner||'—'):'🧾 Previous round cancelled';
+ const details=r.status==='completed'?'Winner credit: '+fmt(r.prize)+' DEMO · Eligible players: '+Number(r.eligible_players||0):'All remaining entries were refunded (demo).';
+ return '<div class="v16-status" style="margin-top:16px"><b>'+title+'</b><p>'+details+'</p><p class="v16-muted">Finished '+escapeHTML(when(r.finished_at))+' · Previous rounds remain recorded in Supabase.</p></div>';
+}
+function automationCard(){
+ let msg='⚙️ Checking server automation…';
+ if(cachedAutomation)msg=cachedAutomation.active
+  ?'✅ Automatic house manager active · Last server check: '+escapeHTML(when(cachedAutomation.last_tick))
+  :'⚠️ Automatic house manager not running yet. Install the V17 Supabase Cron job (02 SQL).';
+ return '<div class="v16-status">'+msg+'<p class="v16-muted">Server checks occur about once per minute, even if both phones are closed. New rounds open automatically when someone visits after a completed round. No actual payments occur.</p></div>';
+}
+function draw(){
+ const houseEl=$('ororoV16House');
+ if(houseEl){
+   const isNextRound=!!(cachedRecent && cachedHouse &&
+     cachedRecent.house_id!==cachedHouse.house_id &&
+     (cachedRecent.status==='completed'||cachedRecent.status==='cancelled'));
+   const past=isNextRound?'<div class="v16-panel"><h2>🏆 Previous draw has finished</h2>'+recentResultCard(cachedRecent)+'</div>':'';
+   const base=houseCard(cachedHouse,cachedWallet);
+   // Display the finished result BEFORE the new house, rather than silently replacing it.
+   const markup=past+base.replace('<div class="v16-panel">','<div class="v16-panel">'+automationCard());
+   window.ororoPatchMarkup(houseEl,markup);
+ }
+ const walletEl=$('ororoV16Wallet');
+ if(walletEl)window.ororoPatchMarkup(walletEl,walletCard(cachedWallet));
+ updateClock();
+}
+async function load(){
+ if(!($('ororoV16House')||$('ororoV16Wallet'))||busy)return;
+ busy=true;const houseEl=$('ororoV16House');/* Silent refresh: keep existing UI stable while the request runs. */
+ try{
+   const c=getClient();if(!c)throw Error('Supabase is unavailable. Check your connection.');
+   const {data,error}=await c.auth.getUser();if(error&&error.name!=='AuthSessionMissingError')throw error;
+   if(!data?.user){cachedHouse=null;cachedWallet=null;activeAccount=null;showError('Sign in under Settings → Account, then revisit Houses or Wallet.');return;}
+   if(activeAccount!==data.user.id){activeAccount=data.user.id;cachedHouse=null;cachedWallet=null;cachedRecent=null;}
+   // Demand-driven next round: on visiting ORORO, open one fresh demo house
+   // if the previous round is complete; advisory locking prevents duplicates.
+   cachedEnsure=await rpc('ororo_v17_ensure_round');
+   cachedHouse=await rpc('ororo_v16_house_snapshot');
+   cachedWallet=await rpc('ororo_v16_wallet_snapshot');
+   const extras=await Promise.allSettled([rpc('ororo_v17_manager_status'),rpc('ororo_v17_recent_result')]);
+   cachedAutomation=extras[0].status==='fulfilled'?extras[0].value:null;
+   cachedRecent=extras[1].status==='fulfilled'?extras[1].value:null;
+   lastLoad=Date.now();draw();
+ }catch(e){showError('V17 connection error: '+(e.message||String(e))+'. If setup SQL has not been installed, run it once in Supabase.');}
+ finally{busy=false;}
+}
+async function doAction(action){
+ if(busy)return;const h=cachedHouse;
+ if(!h){toast('Refresh the ORORO house first');return;}
+ const btn=$(action==='join'?'v16Join':action==='yes'?'v16Yes':'v16No');
+ if(btn)btn.disabled=true;
+ try{
+  const result=action==='join' ? await rpc('ororo_v16_join',{p_house_id:h.house_id})
+  : await rpc('ororo_v16_cast_vote',{p_house_id:h.house_id,p_vote:action});
+  toast('🍀 '+result);await load();
+ }catch(e){toast('ORORO demo: '+(e.message||String(e)));if(btn)btn.disabled=false;}
+}
+document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+ const id=b.id;
+ if(id==='v16Refresh'){e.stopImmediatePropagation();load();}
+ if(id==='v16Join'){e.stopImmediatePropagation();doAction('join');}
+ if(id==='v16Yes'){e.stopImmediatePropagation();doAction('yes');}
+ if(id==='v16No'){e.stopImmediatePropagation();doAction('no');}
+},true);
+// The existing ORORO navigation re-renders #view. Reconnect our widgets
+// whenever the user switches between Houses, Wallet, and other screens.
+const observer=new MutationObserver(()=>{if($('ororoV16House')||$('ororoV16Wallet'))load();});
+observer.observe(ROOT,{childList:true});
+setInterval(()=>{if(!document.hidden&&($('ororoV16House')||$('ororoV16Wallet'))&&Date.now()-lastLoad>=11000)load();updateClock();},1000);
+if($('ororoV16House')||$('ororoV16Wallet'))load();
+})();
+</script>
+</body></html>
